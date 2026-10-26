@@ -13,7 +13,10 @@ import type { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import { JOB2ICON } from './common/JobToIcon';
+import {
+  LobbyNotices,
+  type LobbyNoticesType,
+} from './common/crimson/LobbyNotices';
 
 type Job = {
   unavailable_reason: string | null;
@@ -22,6 +25,7 @@ type Job = {
   used_slots: number;
   prioritized: BooleanLike;
   description: string;
+  jobIcon: string;
 };
 
 type Department = {
@@ -39,19 +43,19 @@ type Data = {
   priority: BooleanLike;
   round_duration: string;
   selected_character?: string; // CRIMSON EDIT ADDITION - CHANGE_CHARACTER_SLOT
+  notices: LobbyNoticesType; // CRIMSON EDIT ADDITION - lobby_notices
 };
 
 type JobEntryProps = {
   jobName: string;
   job: Job;
   department: Department;
+  jobIcon: string;
   onClick: () => void;
 };
 
 function JobEntry(props: JobEntryProps) {
-  const { jobName, job, department, onClick } = props;
-
-  const jobIcon = JOB2ICON[jobName] || null;
+  const { jobName, job, department, jobIcon, onClick } = props;
 
   return (
     <Button
@@ -159,6 +163,7 @@ function DepartmentEntry(props: DepartmentEntryProps) {
                 key={name}
                 jobName={name}
                 job={job}
+                jobIcon={job.jobIcon}
                 department={department}
                 onClick={() => {
                   act('select_job', { job: name });
@@ -210,6 +215,9 @@ export function JobSelection(props) {
           scrollable
           title={
             <>
+              {/* CRIMSON EDIT ADDITION START - lobby_notices */}
+              <LobbyNotices notices={data.notices} />
+              {/* CRIMSON EDIT ADDITION END */}
               {shuttle_status && <NoticeBox info>{shuttle_status}</NoticeBox>}
               <Box as="span" color="label">
                 {!!data.selected_character && (

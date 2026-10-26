@@ -180,6 +180,7 @@ DEFINE_BITFIELD(smoothing_junction, list(
 #define SMOOTH_GROUP_WINDOW_FULLTILE_BRONZE S_OBJ(23) ///obj/structure/window/bronze/fulltile
 #define SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM S_OBJ(24) ///turf/closed/indestructible/opsglass, /obj/structure/window/reinforced/plasma/plastitanium
 #define SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE S_OBJ(25) ///obj/structure/window/reinforced/shuttle
+#define SMOOTH_GROUP_WINDOW_FULLTILE_CULT  S_OBJ(26) ///obj/structure/window/cult/fulltile
 
 #define SMOOTH_GROUP_LATTICE S_OBJ(31) ///obj/structure/lattice
 #define SMOOTH_GROUP_CATWALK S_OBJ(32) ///obj/structure/lattice/catwalk
@@ -247,6 +248,8 @@ DEFINE_BITFIELD(smoothing_junction, list(
 // DARKPACK EDIT END
 #define SMOOTH_GROUP_CITY_LOW_WALL S_TURF(91) ///obj/structure/platform/lowwall // DARKPACK EDIT ADD - WALLS
 #define SMOOTH_GROUP_FF_TABLES S_OBJ(92) ///obj/structure/table/countertop/fastfood // DARKPACK EDIT ADD - DECOR
+
+#define SMOOTH_GROUP_POLICE_TAPE S_OBJ(93) // /obj/structure/holosign/barrier/police_tape // DARKPACK EDIT ADD - Police tape
 
 /// Performs the work to set smoothing_groups and canSmoothWith.
 /// An inlined function used in both turf/Initialize and atom/Initialize.

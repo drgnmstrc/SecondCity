@@ -79,6 +79,7 @@
 /obj/item/reagent_containers/cup/glass/trophy/gold_cup/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/cuffable_item) //closed handles
+	AddComponent(/datum/component/selling, 300, "trophy", TRUE) // CRIMSON EDIT ADD - Sell Valuables
 
 /obj/item/reagent_containers/cup/glass/trophy/silver_cup
 	name = "silver cup"
@@ -118,6 +119,7 @@
 	desc = "Careful, the beverage you're about to enjoy is extremely hot."
 	icon = 'icons/obj/drinks/coffee.dmi'
 	icon_state = "coffee"
+	inhand_icon_state = "coffee"
 	base_icon_state = "coffee"
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	resistance_flags = FREEZE_PROOF

@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/darkpack
-	recoil = 4
+	recoil = 3
 
 /obj/item/gun/ballistic/automatic/pistol/darkpack
 	recoil = 2
@@ -13,68 +13,116 @@
 
 // Pistols
 /obj/item/gun/ballistic/automatic/pistol/darkpack/deagle
-	recoil = 3
+	recoil = 2
 
 /obj/item/gun/ballistic/automatic/pistol/darkpack/deagle/c50
-	recoil = 4
+	recoil = 3
 
 /obj/item/gun/ballistic/automatic/pistol/darkpack/glock21
-	recoil = 3
+	recoil = 2
 
 // SMGs
 /obj/item/gun/ballistic/automatic/darkpack/uzi
-	recoil = 4
+	recoil = 3
 
 /obj/item/gun/ballistic/automatic/darkpack/mp5
 	recoil = 2
 
 /obj/item/gun/ballistic/automatic/darkpack/mac10
-	recoil = 5
+	name = "\improper Braddock 9mm"
+	recoil = 4
 
 /obj/item/gun/ballistic/automatic/darkpack/mac10/super
-	recoil = 4
+	recoil = 3
 
 /obj/item/gun/ballistic/automatic/darkpack/mp7
 	recoil = 1
 
 // Rifles
 /obj/item/gun/ballistic/automatic/darkpack/ar15
-	recoil = 4
+	recoil = 3
+
+/obj/item/gun/ballistic/automatic/darkpack/fal
+	recoil = 3
 
 /obj/item/gun/ballistic/automatic/darkpack/huntrifle
-	recoil = 2
+	recoil = 1
+
+/obj/item/gun/ballistic/automatic/darkpack/huntrifle/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/scope, range_modifier = 1.5)
 
 /obj/item/gun/ballistic/automatic/darkpack/ak74
-	recoil = 4
+	recoil = 3
 
 /obj/item/gun/ballistic/automatic/darkpack/ak74/sawn
-	recoil = 6
+	recoil = 4
 
 /obj/item/gun/ballistic/automatic/darkpack/aug
-	recoil = 4
+	recoil = 3
+
+/obj/item/gun/ballistic/automatic/darkpack/aug/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/scope, range_modifier = 1.2)
 
 /obj/item/gun/ballistic/automatic/darkpack/thompson
-	recoil = 4
+	recoil = 3
 
 /obj/item/gun/ballistic/rifle/darkpack/lever
-	recoil = 2
+	recoil = 1
+
+/obj/item/gun/ballistic/automatic/darkpack/musket
+	projectile_damage_multiplier = 1
+
+/obj/item/gun/ballistic/automatic/darkpack/musket/sawn
+	projectile_damage_multiplier = 0.75
 
 // Sniper
 /obj/item/gun/ballistic/automatic/darkpack/sniper
-	recoil = 8
+	recoil = 6
+	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 3
+
+/obj/item/gun/ballistic/automatic/darkpack/sniper/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/scope, range_modifier = 4)
 
 /obj/item/gun/ballistic/automatic/darkpack/autosniper
-	recoil = 5
+	recoil = 4
+
+/obj/item/gun/ballistic/automatic/darkpack/autosniper/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/scope, range_modifier = 4)
 
 // Shotguns
 /obj/item/gun/ballistic/shotgun/vampire
-	recoil = 5
-
-/obj/item/gun/ballistic/shotgun/vampire/sawnoff
-	recoil = 8
-
-/obj/item/gun/ballistic/shotgun/vampire/doublebarrel
 	recoil = 4
 
+/obj/item/gun/ballistic/shotgun/vampire/sawnoff
+	recoil = 6
+
+/obj/item/gun/ballistic/shotgun/vampire/doublebarrel
+	recoil = 3
+
 /obj/item/gun/ballistic/automatic/darkpack/autoshotgun
-	recoil = 5
+	recoil = 4
+
+/obj/item/gun/ballistic/shotgun/vamp_remington
+	recoil = 4
+
+/obj/item/gun/ballistic/shotgun/vamp_remington/sawnoff
+	recoil = 6
+
+// Magazine Modifications
+
+/obj/item/ammo_box/magazine/darkpack556/hunt
+	name = "rifle magazine (7.62x51mm)"
+	caliber = CALIBER_762NATO
+	ammo_type = /obj/item/ammo_casing/vampire/c762x51mm
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/darkpack45smg
+	name = "9mm SMG magazine"
+	ammo_type = /obj/item/ammo_casing/vampire/c9mm
+	caliber = CALIBER_9MMPARA
+
