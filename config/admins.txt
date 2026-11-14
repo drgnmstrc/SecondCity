@@ -5,4 +5,8 @@
 #If SQL-based admin loading is enabled, admins listed here will always be loaded first and will override any duplicate entries in the database.
 
 DragonMasterC = Host
+<<<<<<< HEAD
 Eagletanker = Game Master
+=======
+Eagletanker = Game Master
+>>>>>>> f458710190f698bc93b56a713dfc9fd2134a9f44
